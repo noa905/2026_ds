@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫のなで方ガイド</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: #fef9f2;
+            color: #4a3e3d;
+            margin: 0;
+            padding: 20px;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 30px 10px 20px;
+        }
+        .cat-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 26px;
+            color: #2c221e;
+            margin: 0 0 8px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #8c7b75;
+        }
+        
+        .zone-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(74, 62, 61, 0.05);
+            border-left: 8px solid #ccc;
+        }
+        
+        .zone-card.safe {
+            border-left-color: #68d391; /* 緑 */
+        }
+        .zone-card.caution {
+            border-left-color: #f6ad55; /* オレンジ */
+        }
+        .zone-card.danger {
+            border-left-color: #fc8181; /* 赤 */
+        }
+        
+        .badge {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: white;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .badge.safe { background-color: #48bb78; }
+        .badge.caution { background-color: #ed8936; }
+        .badge.danger { background-color: #e53e3e; }
+        
+        .zone-info {
+            flex: 1;
+        }
+        .zone-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .zone-desc {
+            font-size: 13px;
+            color: #665652;
+            line-height: 1.5;
+        }
+        
+        .tip-box {
+            background-color: #fff2e2;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 24px;
+        }
+        .tip-title {
+            font-weight: bold;
+            color: #d68029;
+            margin-bottom: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #a89a95;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="cat-icon">🐱</div>
+        <h1>猫の撫でてOKエリア図鑑</h1>
+        <p class="subtitle">〜どこを撫でると喜ぶ？危険地帯はどこ？〜</p>
+    </header>
+
+    <!-- 安全エリア -->
+    <div class="zone-card safe">
+        <div class="zone-info">
+            <span class="badge safe">GOD ZONE（天国）</span>
+            <div class="zone-title">顎の下・首まわり</div>
+            <div class="zone-desc">自力で毛づくろいしにくい場所。少し首をのばしてウットリしたら大成功！</div>
+        </div>
+    </div>
+
+    <div class="zone-card safe">
+        <div class="zone-info">
+            <span class="badge safe">GREAT ZONE（大好き）</span>
+            <div class="zone-title">おでこ・耳のあいだ</div>
+            <div class="zone-desc">自分の匂いを付けたがる場所。指の背で優しく撫でてあげるとゴロゴロ鳴き始めます。</div>
+        </div>
+    </div>
+
+    <!-- 注意エリア -->
+    <div class="zone-card caution">
+        <div class="zone-info">
+            <span class="badge caution">CAUTION ZONE（気分次第）</span>
+            <div class="zone-title
