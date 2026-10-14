@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>猫のなで方ガイド</title>
+    <title>猫のなで方ガイド＆クイズ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -48,15 +48,9 @@
             border-left: 8px solid #ccc;
         }
         
-        .zone-card.safe {
-            border-left-color: #68d391; /* 緑 */
-        }
-        .zone-card.caution {
-            border-left-color: #f6ad55; /* オレンジ */
-        }
-        .zone-card.danger {
-            border-left-color: #fc8181; /* 赤 */
-        }
+        .zone-card.safe { border-left-color: #68d391; }
+        .zone-card.caution { border-left-color: #f6ad55; }
+        .zone-card.danger { border-left-color: #fc8181; }
         
         .badge {
             font-size: 12px;
@@ -71,9 +65,7 @@
         .badge.caution { background-color: #ed8936; }
         .badge.danger { background-color: #e53e3e; }
         
-        .zone-info {
-            flex: 1;
-        }
+        .zone-info { flex: 1; }
         .zone-title {
             font-size: 18px;
             font-weight: bold;
@@ -84,19 +76,53 @@
             color: #665652;
             line-height: 1.5;
         }
-        
-        .tip-box {
-            background-color: #fff2e2;
-            border-radius: 12px;
-            padding: 16px;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-top: 24px;
+
+        /* クイズエリアのスタイル */
+        .quiz-container {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(74, 62, 61, 0.08);
+            border: 2px solid #f6ad55;
         }
-        .tip-title {
+        .quiz-title {
+            font-size: 20px;
             font-weight: bold;
             color: #d68029;
-            margin-bottom: 4px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .quiz-question {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #fef9f2;
+            border: 1px solid #e2d8ce;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #4a3e3d;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .quiz-option:hover {
+            background-color: #fbeee0;
+        }
+        .quiz-result {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
         }
         
         footer {
@@ -138,4 +164,52 @@
     <div class="zone-card caution">
         <div class="zone-info">
             <span class="badge caution">CAUTION ZONE（気分次第）</span>
-            <div class="zone-title
+            <div class="zone-title">背中・腰（しっぽの付け根）</div>
+            <div class="zone-desc">ポンポン叩くと喜ぶ猫も多いですが、しつこく触ると突然怒り出すこともあります。</div>
+        </div>
+    </div>
+
+    <!-- 危険エリア -->
+    <div class="zone-card danger">
+        <div class="zone-info">
+            <span class="badge danger">DANGER ZONE（トラップ）</span>
+            <div class="zone-title">お腹・肉球・しっぽ</div>
+            <div class="zone-desc">弱点のため触られるのを嫌がります。お腹を見せていても「触っていいよ」ではないので注意！</div>
+        </div>
+    </div>
+
+    <!-- クイズセクション -->
+    <div class="quiz-container">
+        <div class="quiz-title">🐾 猫の理解度クイズ 🐾</div>
+        <div class="quiz-question">Q. 猫がお腹をごろんと見せて寝転がっています。どうするのが正解？</div>
+        
+        <button class="quiz-option" onclick="checkAnswer(false)">1. チャンス！と思ってお腹をワシャワシャ撫で回す</button>
+        <button class="quiz-option" onclick="checkAnswer(true)">2. リラックスしているのを見守る（無理に触らない）</button>
+        <button class="quiz-option" onclick="checkAnswer(false)">3. 肉球をモフモフ触りまくる</button>
+
+        <div id="result" class="quiz-result"></div>
+    </div>
+
+    <footer>
+        © 2026 Cat Protection Protocol
+    </footer>
+</div>
+
+<script>
+    function checkAnswer(isCorrect) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        if (isCorrect) {
+            resultDiv.style.backgroundColor = '#e6fffa';
+            resultDiv.style.color = '#234e52';
+            resultDiv.innerHTML = '⭕️ 正解！<br>お腹を見せるのは「信頼の証」ですが、触ってほしいわけではありません。そっと見守りましょう！';
+        } else {
+            resultDiv.style.backgroundColor = '#fff5f5';
+            resultDiv.style.color = '#9b2c2c';
+            resultDiv.innerHTML = '❌ 残念！ガブッと噛まれるかも！<br>お腹や肉球は弱点なので、触ると怒られることが多いです。';
+        }
+    }
+</script>
+
+</body>
+</html>
