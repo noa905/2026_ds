@@ -1,2 +1,14 @@
 # 2026_ds
-ztest repository for science class
+
+これは私の実習です。
+
+---
+
+見出し1
+## 見出し2
+### 見出し3
+
+- 項目1
+- 項目2
+
+[大学HP](https://www.ncu.ac.jp)
